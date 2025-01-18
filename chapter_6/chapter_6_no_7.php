@@ -1,29 +1,29 @@
 <?php
-$day = 3;
-
-switch ($day) {
-    case 1:
-        echo "Monday";
-        break;
-    case 2:
-        echo "Tuesday";
-        break;
-    case 3:
-        echo "Wednesday";
-        break;
-    case 4:
-        echo "Thursday";
-        break;
-    case 5:
-        echo "Friday";
-        break;
-    case 6:
-        echo "Saturday";
-        break;
-    case 7:
-        echo "Sunday";
-        break;
-    default:
-        echo "Invalid input. Please enter a number between 1 and 7.";
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $num=intval($_POST["num"]);
+    switch($num){
+        case 1:
+            $num="Monday";
+            break;
+        case 2:
+            $num="Tuesday";
+            break;
+        case 3:
+            $num="Wednesday";
+            break;
+        case 4:
+            $num="Thursday";
+            break;
+        case 5:
+            $num="Friday";
+            break;
+        case 6:
+            $num="Saturday";
+            break;
+        case 7:
+            $num="Sunday";
+            break;
+    }
+    echo "<p><strong>Corresponding day:</strong> " . htmlspecialchars($num) . "</p>";
 }
 ?>
